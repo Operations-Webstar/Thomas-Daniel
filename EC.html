@@ -3,8 +3,9 @@
 <head>
     <title>Elasticitet Kalkulator</title>
 </head>
-<body onload="(script.js)">
-<script src="script.js"></script>
+<body onload="startTime()">
+<script src="script.js">
+</script>
 <div id="txt"></div>
 
 <!--Her er en lille intro og link til elasticitet hvis man ikke kender de --!>
@@ -16,5 +17,26 @@
 <br>
 <iframe width="437" height="100" frameborder="0" scrolling="no" src="https://onedrive.live.com/embed?resid=EDED57B54058E267%21366&authkey=%21ANCmhuk5ozK8Y9w&em=2&AllowTyping=True&Item='Ark1'!A10%3AF11&wdHideGridlines=True&wdDownloadButton=True&wdInConfigurator=True"></iframe>
 <br>
+<script>
+    function startTime() {
+        var today = new Date();
+        var h = today.getHours();
+        var m = today.getMinutes();
+        var s = today.getSeconds();
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById('txt').innerHTML =
+            h + ":" + m + ":" + s;
+        var t = setTimeout(startTime, 500);
+    }
+    function checkTime(i) {
+        if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+        return i;
+    }
+</script>
+
+
+<div id="txt"></div>
+
 </body>
 </html>
